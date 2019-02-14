@@ -15,9 +15,9 @@ $conn_args = array(
     'vhost'=>'/'
 );
 
-$e_name = 'e_linvo'; //交换机名
-$q_name = 'q_linvo'; //队列名
-$k_route = 'key_1'; //路由key
+$e_name = 'exchange-xuyiping'; //交换机名
+$q_name = 'queues-xuyiping'; //队列名
+$k_route = 'route-xuyiping'; //路由key
 
 //创建连接和channel
 $conn = new AMQPConnection($conn_args);
