@@ -28,7 +28,7 @@ $ex->setType(AMQP_EX_TYPE_TOPIC); //direct类型
 $ex->setFlags(AMQP_DURABLE); //持久化
 date_default_timezone_set("Asia/Shanghai");
 
-$message = "Hello world!".$i;
+$message = "Hello world!";
 echo "Send Message:".$ex->publish($message , $k_route1)."\n";
 echo "Send Message:".$ex->publish($message , $k_route2)."\n";
 echo "Send Message:".$ex->publish($message , $k_route3)."\n";
