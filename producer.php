@@ -11,7 +11,7 @@ $conn_args = array(
     'port' => '5672',
     'login' => 'guest',
     'password' => 'guest',
-    'vhost'=>'/test'
+    'vhost'=>'/'
 );
 
 //创建连接
