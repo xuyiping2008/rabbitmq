@@ -23,8 +23,8 @@ if(!$conn->connect()){
 
 $channel = new AMQPChannel($conn);
 
-$e_name = 'ex-xuyiping'; //交换机名
-$k_route = 'route-xuyiping'; //路由key
+$e_name = 'e_linvo'; //交换机名
+$k_route = 'key_1'; //路由key
 //创建交换机
 $ex = new AMQPExchange($channel);
 $ex->setName($e_name);
