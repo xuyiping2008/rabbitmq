@@ -15,7 +15,7 @@ $conn_args = array(
     'vhost'=>'/'
 );
 
-$e_name = 'exchange-xuyiping'; //交换机名
+$e_name = 'ex-xuyiping'; //交换机名
 $q_name = 'queues-xuyiping'; //队列名
 $k_route = 'route-xuyiping'; //路由key
 
