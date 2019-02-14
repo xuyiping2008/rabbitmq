@@ -9,7 +9,7 @@ $conn_args = array(
     'vhost'=>'/'
 );
 
-$e_name = 'e_xuyiping'; //交换机名
+$e_name = 'e_linvo'; //交换机名
 $q_name = 'q_linvo'; //队列名
 $k_route = 'key_1'; //路由key
 
@@ -26,12 +26,10 @@ $ex->setName($e_name);
 $ex->setType(AMQP_EX_TYPE_DIRECT); //direct类型
 $ex->setFlags(AMQP_DURABLE); //持久化
 
-
 //创建队列
 $q = new AMQPQueue($channel);
 $q->setName($q_name);
 $q->setFlags(AMQP_DURABLE); //持久化
-
 
 //绑定交换机与队列，并指定路由键
 echo 'Queue Bind: '.$q->bind($e_name, $k_route)."\n";
