@@ -23,7 +23,7 @@ $channel = new AMQPChannel($conn);
 //创建交换机
 $ex = new AMQPExchange($channel);
 $ex->setName($e_name);
-$ex->setType(AMQP_EX_TYPE_DIRECT); //direct类型
+$ex->setType(AMQP_EX_TYPE_TOPIC); //direct类型
 $ex->setFlags(AMQP_DURABLE); //持久化
 
 //创建队列
