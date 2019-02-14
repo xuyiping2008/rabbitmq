@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xuyiping
- * Date: 2018/12/25
- * Time: 15:18
- */
 
 $conn_args = array(
     'host' => '127.0.0.1',
@@ -16,7 +10,6 @@ $conn_args = array(
 
 //创建连接
 $conn = new AMQPConnection($conn_args);
-
 if(!$conn->connect()){
     die('Cannot connect to the broke!');
 }
