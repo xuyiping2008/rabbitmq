@@ -16,10 +16,10 @@ $channel = new AMQPChannel($connection);
 $exchange = new AMQPExchange($channel);
 $exchange->setName($exchangeName);
 $exchange->setType(AMQP_EX_TYPE_DIRECT);
-$exchange->declare();
+//$exchange->declare();
 $queue = new AMQPQueue($channel);
 $queue->setName($queueName);
-$queue->declare();
+//$queue->declare();
 $queue->bind($exchangeName, $routeKey);
 
 var_dump('[*] Waiting for messages. To exit press CTRL+C');
