@@ -56,6 +56,6 @@ $conn->disconnect();
 function processMessage($envelope, $queue) {
     $msg = $envelope->getBody();
     echo $msg."\n"; //处理消息
-    $queue->ack($envelope->getDeliveryTag()); //手动发送ACK应答
+    //$queue->ack($envelope->getDeliveryTag()); //手动发送ACK应答
 }
 ?>
