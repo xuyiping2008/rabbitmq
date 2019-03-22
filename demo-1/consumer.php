@@ -44,8 +44,8 @@ echo 'Queue Bind: '.$q->bind($e_name, $k_route)."\n";
 //阻塞模式接收消息
 echo "Message:\n";
 while(True){
-    $q->consume('processMessage');
-    //$q->consume('processMessage', AMQP_AUTOACK); //自动ACK应答
+    //$q->consume('processMessage');
+    $q->consume('processMessage', AMQP_AUTOACK); //自动ACK应答
 }
 $conn->disconnect();
 

@@ -26,7 +26,6 @@ if (!$conn->connect()) {
 $channel = new AMQPChannel($conn);
 
 
-
 //创建交换机对象
 $ex = new AMQPExchange($channel);
 $ex->setName($e_name);
@@ -36,7 +35,7 @@ date_default_timezone_set("Asia/Shanghai");
 for($i=0; $i<5; ++$i){
     //消息内容
     $message = "hello world ".$i;
-    echo "Send Message:".$ex->publish($message, $k_route)."\n";
+    echo "hello world:".$ex->publish($message, $k_route)."\n";
 }
 //$channel->commitTransaction(); //提交事务
 
