@@ -1,0 +1,5 @@
+RabbitMQ消息队列-通过fanout模式将消息推送到多个Queue中
+有时我们会遇到这样的情况，多个功能模块都希望得到完整的消息数据。例如一个log的消息，一个我们希望输出在屏幕上实时监控，另外一个用户持久化日志。
+这时就可以使用fanout模式。fanout模式模式不像direct模式通过routingkey来进行匹配，而是会把消息发送到所以的已经绑定的队列中
+
+原文链接 https://blog.csdn.net/Super_RD/article/details/70802894

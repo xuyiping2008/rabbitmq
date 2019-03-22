@@ -1,0 +1,9 @@
+RabbitMQ消息队列-通过Topic主题模式分发消息
+本章介绍topic主题模式的应用。如果对direct模式下通过routingkey来匹配消息的模式已经有一定了解那fanout也很好理解。简单的可以理解成direct是通过routingkey精准匹配的，而topic是通过routingkey来模糊匹配。
+在topic模式下支持两个特殊字符的匹配。
+
+* (星号) 代表任意 一个单词
+# (井号) 0个或者多个单词
+
+
+原文地址https://blog.csdn.net/Super_RD/article/details/70850453

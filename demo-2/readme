@@ -1,0 +1,10 @@
+RabbitMQ消息队列-消息任务分发与消息ACK确认机制
+
+设想如果把每个消息当做一个任务，生产者把任务发布到RabbitMQ，然后Consumer接收消息处理任务，如果我们发现一个Consumer不能完成任务处理怎么办呢，
+我们会增加Consumer的数量。由一个Consumer增加到两个Consumer，如图由C变为C1和C2共同来分单工作。
+如果C1和C2是完全一样的，那RabbitMQ会将任务平均分发到两个消费者。
+
+
+因为两个脚本sleep的时间相同所以任务是完全平均分发到两个消费者的。我们修改下c2.php脚本的sleep时间为2秒，看下结果会怎么样。
+
+原文链接https://blog.csdn.net/Super_RD/article/details/70792746
