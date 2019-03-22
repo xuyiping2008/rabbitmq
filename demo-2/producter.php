@@ -25,7 +25,7 @@ try {
 
     $queue->bind($exchangeName, $routeKey);
 
-    for($i=0 ; $i<100;$i++){
+    for($i=0;$i<100;$i++){
         $exchange->publish($message.$i,$routeKey);
         var_dump("Ack Sent $message $i");
     }
@@ -35,4 +35,3 @@ try {
     exit();
 }
 $connection->disconnect();
-
