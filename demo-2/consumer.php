@@ -54,7 +54,6 @@ $conn->disconnect();
  * 处理消息
  */
 function processMessage($envelope, $queue) {
-    var_dump($envelope->getRoutingKey);
     $msg = $envelope->getBody();
     echo $msg."\n"; //处理消息
 }

@@ -33,5 +33,5 @@ $ex->setFlags(AMQP_DURABLE); //持久化
 echo "Exchange Status:".$ex->declare()."\n";
 for($i=0; $i<5; ++$i){
     $message = 'hello world '.$i;
-    echo "Send Message:".$ex->publish($message . date('H:i:s'), $k_route)."\n";
+    echo "Send Message:".$ex->publish($message, $k_route)."\n";
 }
