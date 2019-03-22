@@ -11,7 +11,8 @@ $conn_args = array(
 
 $e_name = 'e_linvo'; //交换机名
 $q_name = 'q_linvo'; //队列名
-$k_route = 'user.#'; //路由key
+$k_route = 'user'; //路由key
+//$k_route = 'user.#'; //路由key
 
 //创建连接和channel
 $conn = new AMQPConnection($conn_args);
