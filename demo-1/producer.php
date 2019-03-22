@@ -6,6 +6,7 @@
  * Time: 14:24
  */
 
+//配置信息
 $conn_args = array(
     'host' => '127.0.0.1',
     'port' => '5672',
@@ -13,22 +14,30 @@ $conn_args = array(
     'password' => 'guest',
     'vhost'=>'/'
 );
-//创建连接
+$e_name = 'e_linvo'; //交换机名
+//$q_name = 'q_linvo'; //无需队列名
+$k_route = 'key_1'; //路由key
+
+//创建连接和channel
 $conn = new AMQPConnection($conn_args);
-if(!$conn->connect()){
-    die('Cannot connect to the broke!');
+if (!$conn->connect()) {
+    die("Cannot connect to the broker!\n");
 }
 $channel = new AMQPChannel($conn);
-$e_name = 'e_xuyiping'; //交换机名
-$k_route = 'key_1'; //路由key
-//创建交换机
+
+
+
+//创建交换机对象
 $ex = new AMQPExchange($channel);
 $ex->setName($e_name);
-$ex->setType(AMQP_EX_TYPE_DIRECT); //direct类型
-$ex->setFlags(AMQP_DURABLE); //持久化
 date_default_timezone_set("Asia/Shanghai");
+//发送消息
+//$channel->startTransaction(); //开始事务
 for($i=0; $i<5; ++$i){
-    $message = "Hello world!".$i;
-    echo "Send Message:".$ex->publish($message , $k_route)."\n";
+    //消息内容
+    $message = "TEST MESSAGE!".date("h:i:sa");
+    echo "Send Message:".$ex->publish($message, $k_route)."\n";
 }
+//$channel->commitTransaction(); //提交事务
+
 $conn->disconnect();
