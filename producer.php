@@ -25,7 +25,7 @@ $ex = new AMQPExchange($channel);
 $ex->setName($e_name);
 //$ex->setType(AMQP_EX_TYPE_DIRECT); //direct类型
 $ex->setType(AMQP_EX_TYPE_TOPIC); //direct类型
-$ex->setFlags(AMQP_DURABLE); //持久化
+//$ex->setFlags(AMQP_DURABLE); //持久化
 date_default_timezone_set("Asia/Shanghai");
 
 $message = "Hello world!";

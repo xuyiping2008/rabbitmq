@@ -24,7 +24,7 @@ $channel = new AMQPChannel($conn);
 $ex = new AMQPExchange($channel);
 $ex->setName($e_name);
 $ex->setType(AMQP_EX_TYPE_TOPIC); //direct类型
-$ex->setFlags(AMQP_DURABLE); //持久化
+//$ex->setFlags(AMQP_DURABLE); //持久化
 
 //创建队列
 $q = new AMQPQueue($channel);
