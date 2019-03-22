@@ -37,7 +37,7 @@ $conn->disconnect();
 */
 function processMessage($envelope, $q) {
     $msg = $envelope->getBody();
-    sleep(2);  //sleep1秒模拟任务处理
+    sleep(1);  //sleep1秒模拟任务处理
     echo $msg."\n"; //处理消息
-    $q->ack($envelope->getDeliveryTag()); //手动发送ACK应答
+    //$q->ack($envelope->getDeliveryTag()); //手动发送ACK应答
 }
