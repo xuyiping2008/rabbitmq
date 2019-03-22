@@ -27,7 +27,7 @@ try {
 
     for($i=0 ; $i<100;$i++){
         $exchange->publish($message.$i,$routeKey);
-        var_dump("[x] Sent $message $i");
+        var_dump("Ack Sent $message $i");
     }
 
 } catch (AMQPConnectionException $e) {
