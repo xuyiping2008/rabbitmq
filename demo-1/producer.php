@@ -35,7 +35,7 @@ date_default_timezone_set("Asia/Shanghai");
 //$channel->startTransaction(); //开始事务
 for($i=0; $i<5; ++$i){
     //消息内容
-    $message = "TEST MESSAGE!".date("h:i:sa");
+    $message = "hello world ".$i;
     echo "Send Message:".$ex->publish($message, $k_route)."\n";
 }
 //$channel->commitTransaction(); //提交事务
