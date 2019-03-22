@@ -9,6 +9,7 @@ $exchangeName = 'superrd';
 $connection = new AMQPConnection(array('host' => '127.0.0.1', 'port' => '5672', 'vhost' => '/', 'login' => 'guest', 'password' => 'guest'));
 $connection->connect() or die("Cannot connect to the broker!\n");
 $channel = new AMQPChannel($connection);
+$channel->setPrefetchCount(1);
 $exchange = new AMQPExchange($channel);
 $exchange->setName($exchangeName);
 $exchange->setType(AMQP_EX_TYPE_DIRECT);
