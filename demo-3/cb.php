@@ -4,7 +4,8 @@ $exchangeName = 'log';
 $queueName = 'queueb';
 $routeKey = '';
 
-$connection = new AMQPConnection(array('host' => '10.99.121.137','port' => '5672', 'vhost' => '/', 'login' => 'superrd', 'password' => 'superrd'));
+//$connection = new AMQPConnection(array('host' => '10.99.121.137','port' => '5672', 'vhost' => '/', 'login' => 'superrd', 'password' => 'superrd'));
+$connection = new AMQPConnection(array('host' => '127.0.0.1', 'port' => '5672', 'vhost' => '/', 'login' => 'guest', 'password' => 'guest'));
 $connection->connect() or die("Cannot connect to the broker!\n");
 
 $channel = new AMQPChannel($connection);
