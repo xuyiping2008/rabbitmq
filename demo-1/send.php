@@ -34,7 +34,7 @@ try {
     $queue->bind($exchangeName, $routeKey);
 
     //生产消息
-    for ($i = 0; $i < 6; $i++){
+    for ($i = 0; $i < 3; $i++){
         $message = 'Hello World!--'.$i;
         $exchange->publish($message,$routeKey);
     }
