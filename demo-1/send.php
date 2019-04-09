@@ -21,7 +21,7 @@ try {
     $exchange->setName($exchangeName);
     $exchange->setType(AMQP_EX_TYPE_DIRECT);
     $exchange->setFlags(AMQP_DURABLE);
-    $exchange->declareExchange('durable_queue',false,true,false,false);
+    $exchange->declareExchange();
 
 
     //绑定队列
